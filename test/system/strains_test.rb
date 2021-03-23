@@ -14,6 +14,7 @@ class StrainsTest < ApplicationSystemTestCase
     visit strains_url
     click_on "New Strain"
 
+    fill_in "Age", with: @strain.age
     fill_in "Name", with: @strain.name
     click_on "Create Strain"
 
@@ -25,6 +26,7 @@ class StrainsTest < ApplicationSystemTestCase
     visit strains_url
     click_on "Edit", match: :first
 
+    fill_in "Age", with: @strain.age
     fill_in "Name", with: @strain.name
     click_on "Update Strain"
 

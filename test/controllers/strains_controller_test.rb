@@ -17,7 +17,7 @@ class StrainsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create strain" do
     assert_difference('Strain.count') do
-      post strains_url, params: { strain: { name: @strain.name } }
+      post strains_url, params: { strain: { age: @strain.age, name: @strain.name } }
     end
 
     assert_redirected_to strain_url(Strain.last)
@@ -34,7 +34,7 @@ class StrainsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update strain" do
-    patch strain_url(@strain), params: { strain: { name: @strain.name } }
+    patch strain_url(@strain), params: { strain: { age: @strain.age, name: @strain.name } }
     assert_redirected_to strain_url(@strain)
   end
 

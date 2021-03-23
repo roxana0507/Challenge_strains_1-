@@ -10,16 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_211734) do
+ActiveRecord::Schema.define(version: 2021_03_23_214720) do
 
   create_table "strains", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
+    t.integer "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "strains_wines", id: false, force: :cascade do |t|
+    t.integer "strain_id", null: false
+    t.integer "wine_id", null: false
+  end
+
   create_table "wines", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
+    t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -14,6 +14,7 @@ class WinesTest < ApplicationSystemTestCase
     visit wines_url
     click_on "New Wine"
 
+    fill_in "Color", with: @wine.color
     fill_in "Name", with: @wine.name
     click_on "Create Wine"
 
@@ -25,6 +26,7 @@ class WinesTest < ApplicationSystemTestCase
     visit wines_url
     click_on "Edit", match: :first
 
+    fill_in "Color", with: @wine.color
     fill_in "Name", with: @wine.name
     click_on "Update Wine"
 
